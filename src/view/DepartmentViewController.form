@@ -120,6 +120,15 @@
               <text value="Employees"/>
             </properties>
           </component>
+          <component id="ae8b6" class="javax.swing.JButton" binding="goToStatisticsView">
+            <constraints/>
+            <properties>
+              <text value="Statistics"/>
+            </properties>
+          </component>
+          <vspacer id="4a21d">
+            <constraints/>
+          </vspacer>
         </children>
       </grid>
     </children>

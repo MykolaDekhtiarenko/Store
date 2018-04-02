@@ -15,7 +15,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class EmployeeViewController {
+public class EmployeeViewController implements Controller{
     private JPanel contentView;
     private JList employeesList;
     private JButton goToDepartmentView;
@@ -27,6 +27,7 @@ public class EmployeeViewController {
     private JButton addEmployee;
     private JButton paySalaryButton;
     private JButton payBonusButton;
+    private JButton goToStatisticsView;
 
 
     private List<Employee> dataSource;
@@ -45,6 +46,7 @@ public class EmployeeViewController {
         employeesList.setSelectedIndex(0);
 
         goToDepartmentView.addActionListener(e -> goToDepartmentView());
+        goToStatisticsView.addActionListener(e -> goToStatisticsView());
         newSalary.addActionListener(e -> onClickEditSalaryEvent());
         addEmployee.addActionListener(e -> showAddEmployeeView());
     }
@@ -112,10 +114,6 @@ public class EmployeeViewController {
 
     }
 
-    private void goToDepartmentView() {
-        screen.showDepartmentView();
-    }
-
     private void showAddEmployeeView() {
         AddEmployeeController addEmployeeController = new AddEmployeeController(screen);
     }
@@ -168,6 +166,14 @@ public class EmployeeViewController {
                 .build();
         PaidBonusService.getInstance().create(paidBonus);
         repaintDetails();
+    }
+
+    private void goToDepartmentView() {
+        screen.showAnotherView(this, screen.getDepartmentView());
+    }
+
+    private void goToStatisticsView() {
+        screen.showAnotherView(this, screen.getStatisticsView());
     }
 
 }
