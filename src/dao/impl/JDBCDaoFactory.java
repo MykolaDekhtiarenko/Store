@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class JDBCDaoFactory extends DaoFactory {
 
-    static Connection getConnection(){
+    public static Connection getConnection(){
         Config config = Config.getInstance();
 
         BasicDataSource ds = new BasicDataSource();

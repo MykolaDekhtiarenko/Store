@@ -9,7 +9,7 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import java.util.List;
 
-public class DepartmentViewController {
+public class DepartmentViewController implements Controller{
     private JList departmentList;
     private JButton goToEmployeeView;
     private JPanel contentView;
@@ -17,6 +17,7 @@ public class DepartmentViewController {
     private JList employeeList;
     private JButton createNewDepartmentButton;
     private JLabel departmentName;
+    private JButton goToStatisticsView;
     private Screen screen;
 
     private List<Department> dataSource;
@@ -31,7 +32,7 @@ public class DepartmentViewController {
         departmentList.addListSelectionListener(e -> onUpdateSelectedListItem(e));
         departmentList.setSelectedIndex(0);
         goToEmployeeView.addActionListener(e -> goToEmployeeView());
-
+        goToStatisticsView.addActionListener(e -> goToStatisticsView());
 
     }
 
@@ -100,12 +101,16 @@ public class DepartmentViewController {
         refresh();
     }
 
-    private void goToEmployeeView() {
-        screen.showEmployeeView();
-    }
-
     public JPanel getContentView() {
         return contentView;
+    }
+
+    private void goToEmployeeView() {
+        screen.showAnotherView(this, screen.getDepartmentView());
+    }
+
+    private void goToStatisticsView() {
+        screen.showAnotherView(this, screen.getStatisticsView());
     }
 
 

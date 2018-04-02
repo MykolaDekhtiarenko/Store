@@ -1,15 +1,18 @@
 package view;
 
 
+import lombok.Getter;
+
 import javax.swing.*;
 import java.awt.*;
-
+@Getter
 public class Screen {
 
 
     private JFrame frame = new JFrame("Store");
     private DepartmentViewController departmentView = new DepartmentViewController(this);
     private EmployeeViewController employeeView = new EmployeeViewController(this);
+    private StatisticsViewController statisticsView = new StatisticsViewController(this);
 
     public void createAndShowGUI() {
 
@@ -23,10 +26,10 @@ public class Screen {
     }
 
 
-    public void showDepartmentView(){
-        frame.remove(employeeView.getContentView());
+    public void showAnotherView(Controller controllerToRemove, Controller controllerToSet){
+        frame.remove(controllerToRemove.getContentView());
         frame.invalidate();
-        frame.add(departmentView.getContentView());
+        frame.add(controllerToSet.getContentView());
         frame.validate();
         frame.repaint();
     }
