@@ -31,6 +31,14 @@ public class Screen {
         frame.repaint();
     }
 
+    public void showSaldoView(){
+        frame.remove(employeeView.getContentView());
+        frame.invalidate();
+        frame.add(departmentView.getContentView());
+        frame.validate();
+        frame.repaint();
+    }
+
     public void showEmployeeView(){
         frame.remove(departmentView.getContentView());
         frame.invalidate();

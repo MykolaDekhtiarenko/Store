@@ -253,6 +253,13 @@
               <text value="Departments"/>
             </properties>
           </component>
+          <component id="6f59b" class="javax.swing.JButton" binding="goToSaldoView">
+            <constraints/>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <text value="Saldo"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>
