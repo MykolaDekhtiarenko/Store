@@ -8,7 +8,7 @@ public class Application {
 
 
         try {
-            new LoginUI();
+//            new LoginUI();
 
         }catch (Exception e){
             e.printStackTrace();
