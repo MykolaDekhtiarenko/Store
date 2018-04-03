@@ -87,6 +87,8 @@ public class LoginUI extends JFrame{
 			}
 		});
 
+
+
 		//adding components to contentPane panel
 
 		panel1.add(label3);
@@ -103,11 +105,16 @@ public class LoginUI extends JFrame{
 	}
 
 	//Method mouseClicked for loginButtonApply
-	private void loginEmployee (MouseEvent evt) throws PersistException {
-			loginService.loginById(Integer.valueOf(loginUsernameRF.getText()));
+	private void loginEmployee(MouseEvent evt) throws PersistException {
+		boolean allowed = loginService.loginById(Integer.valueOf(loginUsernameRF.getText()));
+		if (allowed) {
 			new NavigationMenu();
 			setVisible(false);
 			dispose();
+		} else {
+			JOptionPane.showMessageDialog(null, "Wrong employee id!");
+
+		}
 	}
 
 	//method for generate menu
@@ -136,5 +143,6 @@ public class LoginUI extends JFrame{
 		menuBar.add(tools);
 		menuBar.add(help);
 	}
+
 
 }

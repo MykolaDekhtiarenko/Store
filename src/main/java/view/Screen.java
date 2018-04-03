@@ -15,12 +15,9 @@ public class Screen {
     private StatisticsViewController statisticsView = new StatisticsViewController(this);
 
     public void createAndShowGUI() {
-
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
         frame.setMinimumSize(new Dimension(500, 400));
-
         frame.add(employeeView.getContentView());
-
         frame.pack();
         frame.setVisible(true);
     }

@@ -26,7 +26,7 @@ public class Main  {
              try {
                  // TODO: 4/3/2018 SWITCH HERE TO LOGIN UI IN com.micka.borscha.UI.LoginUI
                  // TODO: 4/3/2018 IN TEXT FIELD INPUT ID OF EMPLOYEE TO GET ACCESS TO NAVMENU
-                   new NavigationMenu();
+                   new LoginUI();
 
                 }catch (Exception e){
                     e.printStackTrace();

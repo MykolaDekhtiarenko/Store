@@ -68,7 +68,7 @@ public class ProductView extends JFrame
         //add the tableProductToDelivery to the frame
         this.add(new JScrollPane(tableProductToDelivery));
         this.setTitle("Product in Delivery");
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
         this.pack();
         this.setVisible(true);
     }

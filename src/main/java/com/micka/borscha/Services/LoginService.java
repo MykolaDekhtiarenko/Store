@@ -22,22 +22,26 @@ public class LoginService {
         dao = factory.getDao(connection, Employee.class);
     }
 
-    private  Employee getEmployeeById(Integer integer) throws PersistException {
-        Employee employee = (Employee) dao.getByPK(integer);
+    private  Employee getEmployeeById(Integer integer) {
+        Employee employee = null;
+        try {
+            employee = (Employee) dao.getByPK(integer);
+        } catch (PersistException e) {
+            return null;
+        }
         return employee;
     }
 
-    public void loginById(Integer integer) throws PersistException {
-        Employee employee = getEmployeeById(integer);
-        if(employee.getId() == integer){
+    public boolean loginById(Integer employeeId) throws PersistException {
+        Employee employee = getEmployeeById(employeeId);
+        if(employee!=null&&
+                employee.getId().equals(employeeId)){
             Main.employee = employee;
-            System.out.print("Write login");
             System.out.print(Main.employee.getEmployee_name());
-
-
+            return true;
         }
         else{
-            System.out.print("WrongLogin");
+            return false;
         }
     }
 

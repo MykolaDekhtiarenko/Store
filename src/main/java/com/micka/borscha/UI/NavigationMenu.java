@@ -19,19 +19,19 @@ public class NavigationMenu extends JFrame {
 	private JButton btnOpenOrderTable;
 	private JButton btnOpenSupply;
 	private JButton btnOpenVendor;
-	private JButton kolyaModule;
+	private JButton btnstoreOpen;
 
 	//Constructor 
 	public NavigationMenu(){
 
-		this.setTitle("GUI_project");
-		this.setSize(500,400);
+		this.setTitle("Store Menu");
+//		this.setSize(400,800);
 		//menu generate method
 		this.setJMenuBar(menuBar);
 
 		//pane with null layout
 		JPanel contentPane = new JPanel(null);
-		contentPane.setPreferredSize(new Dimension(500,400));
+		contentPane.setPreferredSize(new Dimension(500,450));
 		contentPane.setBackground(new Color(192,192,192));
 
 
@@ -92,21 +92,19 @@ public class NavigationMenu extends JFrame {
 				} catch (PersistException e1) {
 					e1.printStackTrace();
 				}
-				setVisible(false);
-				dispose();
 			}
 		});
 
-		kolyaModule = new JButton();
-		kolyaModule.setBounds(147,400,202,70);
-		kolyaModule.setBackground(new Color(214,217,223));
-		kolyaModule.setForeground(new Color(0,0,0));
-		kolyaModule.setEnabled(true);
-		kolyaModule.setFont(new Font("sansserif",0,12));
-		kolyaModule.setText("Nickolay's work");
-		kolyaModule.setVisible(true);
+		btnstoreOpen = new JButton();
+		btnstoreOpen.setBounds(147,330,202,70);
+		btnstoreOpen.setBackground(new Color(214,217,223));
+		btnstoreOpen.setForeground(new Color(0,0,0));
+		btnstoreOpen.setEnabled(true);
+		btnstoreOpen.setFont(new Font("sansserif",0,12));
+		btnstoreOpen.setText("Other Store Modules");
+		btnstoreOpen.setVisible(true);
 
-		kolyaModule.addActionListener(new ActionListener() {
+		btnstoreOpen.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Screen mainScreen = new Screen();
@@ -117,12 +115,12 @@ public class NavigationMenu extends JFrame {
 		contentPane.add(btnOpenOrderTable);
 		contentPane.add(btnOpenSupply);
 		contentPane.add(btnOpenVendor);
-		contentPane.add(kolyaModule);
+		contentPane.add(btnstoreOpen);
 
 		//adding panel to JFrame and seting of window position and close operation
 		this.add(contentPane);
-		//this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
+//		this.setLocationRelativeTo(null);
 		this.pack();
 		this.setVisible(true);
 	}

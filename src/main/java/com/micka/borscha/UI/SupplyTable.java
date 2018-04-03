@@ -255,7 +255,7 @@ public class SupplyTable {
 
         frame.setSize(900,400);
         frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
 
     }
