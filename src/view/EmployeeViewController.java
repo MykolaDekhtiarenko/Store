@@ -116,10 +116,6 @@ public class EmployeeViewController implements Controller{
 
     }
 
-    private void goToSaldoView() {
-        screen.showSaldoView();
-    }
-
     private void showAddEmployeeView() {
         AddEmployeeController addEmployeeController = new AddEmployeeController(screen);
     }
@@ -180,6 +176,10 @@ public class EmployeeViewController implements Controller{
 
     private void goToStatisticsView() {
         screen.showAnotherView(this, screen.getStatisticsView());
+    }
+
+    private void goToSaldoView() {
+        screen.showAnotherView(this, screen.getSaldoView());
     }
 
 }

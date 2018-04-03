@@ -259,6 +259,12 @@
               <text value="Statistics"/>
             </properties>
           </component>
+          <component id="704dd" class="javax.swing.JButton" binding="goToSaldoView">
+            <constraints/>
+            <properties>
+              <text value="Saldo"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

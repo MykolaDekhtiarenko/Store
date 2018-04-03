@@ -13,6 +13,7 @@ public class Screen {
     private DepartmentViewController departmentView = new DepartmentViewController(this);
     private EmployeeViewController employeeView = new EmployeeViewController(this);
     private StatisticsViewController statisticsView = new StatisticsViewController(this);
+    private SaldoViewController saldoView = new SaldoViewController(this);
 
     public void createAndShowGUI() {
 
@@ -30,14 +31,6 @@ public class Screen {
         frame.remove(controllerToRemove.getContentView());
         frame.invalidate();
         frame.add(controllerToSet.getContentView());
-        frame.validate();
-        frame.repaint();
-    }
-
-    public void showSaldoView(){
-        frame.remove(employeeView.getContentView());
-        frame.invalidate();
-        frame.add(departmentView.getContentView());
         frame.validate();
         frame.repaint();
     }
