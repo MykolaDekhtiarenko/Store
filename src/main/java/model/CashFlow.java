@@ -9,7 +9,8 @@ import java.util.Date;
 @Builder
 @EqualsAndHashCode(exclude = {"id"})
 
-public class Saldo {
+public class CashFlow {
+    private int id;
     private int amount;
     private Date date;
 

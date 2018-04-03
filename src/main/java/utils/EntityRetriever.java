@@ -1,9 +1,6 @@
 package utils;
 
-import model.Employee;
-import model.PaidSalary;
-import model.Department;
-import model.PaidBonus;
+import model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,6 +44,13 @@ public class EntityRetriever {
                 .build();
     }
 
+    public static CashFlow retrieveCashFlow(ResultSet rs) throws SQLException {
+        return CashFlow.builder()
+                .id(rs.getInt("id"))
+                .amount(rs.getInt("amount")/100)
+                .date(rs.getDate("date"))
+                .build();
+    }
 
 
 

@@ -50,4 +50,8 @@ public class JDBCDaoFactory extends DaoFactory {
         return new PaidSalaryDao(getConnection());
     }
 
+    public CashFlowDao createCashFlowDao() {
+        return new CashFlowDao(getConnection());
+    }
+
 }

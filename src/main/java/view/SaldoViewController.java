@@ -1,6 +1,16 @@
 package view;
 
+import dao.DaoFactory;
+import model.CashFlow;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Locale;
 
 public class SaldoViewController implements Controller{
     private JPanel contentView;
@@ -12,7 +22,6 @@ public class SaldoViewController implements Controller{
     private Screen screen;
 
     public SaldoViewController(Screen screen) {
-        System.out.println(screen);
         this.screen = screen;
         initialize();
     }
@@ -22,6 +31,37 @@ public class SaldoViewController implements Controller{
     }
 
     private void initialize() {
+        DefaultListModel<String> listModel = new DefaultListModel<String>();
+        resultList.setModel(listModel);
+        SHOWButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                countSaldo(resultList, listModel, toField, fromField);
+            }
+        });
+    }
+
+
+    public void countSaldo(JList list, DefaultListModel listModel, JTextField txtTo, JTextField txtFrom) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy", Locale.ENGLISH);
+
+        Date minDate = Date.valueOf(LocalDate.parse(txtFrom.getText(), formatter));
+        Date maxDate = Date.valueOf(LocalDate.parse(txtTo.getText(), formatter));
+        List<CashFlow> result = DaoFactory.getInstance().createCashFlowDao().getCashFlowInRange(minDate, maxDate);
+
+        setListModel(list, result, listModel);
 
     }
+
+    private void setListModel(JList list, List<CashFlow> result, DefaultListModel listModel) {
+        DefaultListModel model = (DefaultListModel) list.getModel();
+
+        for (CashFlow cashFlow: result
+             ) {
+            model.addElement(cashFlow.toString());
+        }
+        list.setModel(model);
+    }
+
+
 }

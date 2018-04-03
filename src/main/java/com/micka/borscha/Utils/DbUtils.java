@@ -11,7 +11,7 @@ import java.util.Date;
 public class DbUtils {
 
     private static final String DB_DRIVER="com.mysql.jdbc.Driver";
-    private static final String DB_URL="jdbc:mysql://localhost/store";
+    private static final String DB_URL="jdbc:mysql://localhost:3306/store";
     private static final String DB_USERNAME="root";
     private static final String DB_PASSWORD="";
 
