@@ -9,6 +9,8 @@ public class Application {
 
         try {
 //            new LoginUI();
+            Screen mainScreen = new Screen();
+            mainScreen.createAndShowGUI();
 
         }catch (Exception e){
             e.printStackTrace();
