@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 @Getter
 @Setter
 @Builder
+
 @EqualsAndHashCode(exclude = {"id"})
 public class PaidSalary implements SortableByDate{
     private int id;

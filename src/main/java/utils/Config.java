@@ -6,7 +6,7 @@ public class Config {
 
     private String url = "jdbc:mysql://localhost:3306/store";
     private String user = "root";
-    private String pass= "";
+    private String pass= "admin";
     private String factoryClassName = JDBCDaoFactory.class.getName();
 
 
