@@ -18,6 +18,9 @@ public class SaldoViewController implements Controller{
     private JTextField toField;
     private JButton SHOWButton;
     private JList resultList;
+    private JButton goToEmployeeViewButton;
+    private JButton goToDepartmentViewButton;
+    private JButton goToStatisticViewButton;
 
     private Screen screen;
 
@@ -38,6 +41,10 @@ public class SaldoViewController implements Controller{
                 countSaldo(resultList, listModel, toField, fromField);
             }
         });
+
+        goToEmployeeViewButton.addActionListener(e -> goToEmployeeView());
+        goToDepartmentViewButton.addActionListener(e -> goToDepartmentView());
+        goToStatisticViewButton.addActionListener(e -> goToStatisticsView());
     }
 
 
@@ -62,6 +69,19 @@ public class SaldoViewController implements Controller{
         }
         list.setModel(model);
     }
+
+    private void goToEmployeeView() {
+        screen.showAnotherView(this, screen.getEmployeeView());
+    }
+
+    private void goToStatisticsView() {
+        screen.showAnotherView(this, screen.getStatisticsView());
+    }
+
+    private void goToDepartmentView() {
+        screen.showAnotherView(this, screen.getDepartmentView());
+    }
+
 
 
 }

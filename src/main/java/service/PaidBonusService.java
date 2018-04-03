@@ -1,7 +1,9 @@
 package service;
 
+import dao.CashFlowDao;
 import dao.DaoFactory;
 import dao.PaidBonusDao;
+import model.CashFlow;
 import model.PaidBonus;
 
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.List;
 public class PaidBonusService {
 
     private PaidBonusDao paidBonusDao;
+    private CashFlowDao cashFlowDao;
 
     public PaidBonusService(PaidBonusDao paidBonusDao) {
         this.paidBonusDao = paidBonusDao;
@@ -23,6 +26,12 @@ public class PaidBonusService {
     }
 
     public boolean create(PaidBonus paidBonus) {
+        cashFlowDao.create(
+                CashFlow.builder()
+                .amount((int)paidBonus.getSize()*100)
+                .date(paidBonus.getDate())
+                .build()
+        );
         return paidBonusDao.create(paidBonus);
     }
 

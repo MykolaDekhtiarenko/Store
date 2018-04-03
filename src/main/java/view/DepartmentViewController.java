@@ -18,6 +18,7 @@ public class DepartmentViewController implements Controller{
     private JButton createNewDepartmentButton;
     private JLabel departmentName;
     private JButton goToStatisticsView;
+    private JButton goToSaldoViewButton;
     private Screen screen;
 
     private List<Department> dataSource;
@@ -33,7 +34,7 @@ public class DepartmentViewController implements Controller{
         departmentList.setSelectedIndex(0);
         goToEmployeeView.addActionListener(e -> goToEmployeeView());
         goToStatisticsView.addActionListener(e -> goToStatisticsView());
-
+        goToSaldoViewButton.addActionListener(e -> goToSaldoView());
     }
 
     public void refresh() {
@@ -106,11 +107,14 @@ public class DepartmentViewController implements Controller{
     }
 
     private void goToEmployeeView() {
-        screen.showAnotherView(this, screen.getDepartmentView());
+        screen.showAnotherView(this, screen.getEmployeeView());
     }
 
     private void goToStatisticsView() {
         screen.showAnotherView(this, screen.getStatisticsView());
+    }
+    private void goToSaldoView() {
+        screen.showAnotherView(this, screen.getSaldoView());
     }
 
 

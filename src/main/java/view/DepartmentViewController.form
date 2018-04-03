@@ -126,6 +126,12 @@
               <text value="Statistics"/>
             </properties>
           </component>
+          <component id="3bff1" class="javax.swing.JButton" binding="goToSaldoViewButton">
+            <constraints/>
+            <properties>
+              <text value="Saldo"/>
+            </properties>
+          </component>
           <vspacer id="4a21d">
             <constraints/>
           </vspacer>

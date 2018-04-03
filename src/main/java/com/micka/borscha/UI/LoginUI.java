@@ -42,7 +42,7 @@ public class LoginUI extends JFrame{
 		label3.setForeground(new Color(0,0,0));
 		label3.setEnabled(true);
 		label3.setFont(new Font("sansserif",0,12));
-		label3.setText("Input your name:");
+		label3.setText("Enter employee id:");
 		label3.setVisible(true);
 
 
@@ -109,8 +109,8 @@ public class LoginUI extends JFrame{
 		boolean allowed = loginService.loginById(Integer.valueOf(loginUsernameRF.getText()));
 		if (allowed) {
 			new NavigationMenu();
-			setVisible(false);
-			dispose();
+			this.setVisible(false);
+			this.dispose();
 		} else {
 			JOptionPane.showMessageDialog(null, "Wrong employee id!");
 

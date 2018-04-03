@@ -1,7 +1,9 @@
 package service;
 
+import dao.CashFlowDao;
 import dao.DaoFactory;
 import dao.PaidSalaryDao;
+import model.CashFlow;
 import model.PaidSalary;
 
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.List;
 public class PaidSalaryService {
 
     private PaidSalaryDao paidSalaryDao;
+    private CashFlowDao cashFlowDao;
 
     public PaidSalaryService(PaidSalaryDao paidSalaryDao) {
         this.paidSalaryDao = paidSalaryDao;
@@ -23,6 +26,12 @@ public class PaidSalaryService {
     }
 
     public boolean create(PaidSalary paidSalary) {
+        cashFlowDao.create(
+                CashFlow.builder()
+                        .amount((int)paidSalary.getSalary()*100)
+                        .date(paidSalary.getDate())
+                        .build()
+        );
         return paidSalaryDao.create(paidSalary);
     }
 
