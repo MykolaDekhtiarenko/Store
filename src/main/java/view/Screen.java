@@ -13,6 +13,7 @@ public class Screen {
     private DepartmentViewController departmentView = new DepartmentViewController(this);
     private EmployeeViewController employeeView = new EmployeeViewController(this);
     private StatisticsViewController statisticsView = new StatisticsViewController(this);
+    private SaldoViewController saldoView = new SaldoViewController(this);
 
     public void createAndShowGUI() {
         frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
@@ -31,6 +32,13 @@ public class Screen {
         frame.repaint();
     }
 
+    public void showEmployeeView(){
+        frame.remove(departmentView.getContentView());
+        frame.invalidate();
+        frame.add(employeeView.getContentView());
+        frame.validate();
+        frame.repaint();
+    }
 
     public void update(){
         employeeView.refresh();

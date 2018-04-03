@@ -6,12 +6,8 @@ public class Config {
 
     private String url = "jdbc:mysql://localhost:3306/store";
     private String user = "root";
-    private String pass= "admin";
+    private String pass= "";
     private String factoryClassName = JDBCDaoFactory.class.getName();
-
-
-
-
 
     private static class Holder{
          private static Config INSTANCE = new Config();

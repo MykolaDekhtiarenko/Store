@@ -28,6 +28,7 @@ public class EmployeeViewController implements Controller{
     private JButton paySalaryButton;
     private JButton payBonusButton;
     private JButton goToStatisticsView;
+    private JButton goToSaldoView;
 
 
     private List<Employee> dataSource;
@@ -46,6 +47,7 @@ public class EmployeeViewController implements Controller{
         employeesList.setSelectedIndex(0);
 
         goToDepartmentView.addActionListener(e -> goToDepartmentView());
+        goToSaldoView.addActionListener(e -> goToSaldoView());
         goToStatisticsView.addActionListener(e -> goToStatisticsView());
         newSalary.addActionListener(e -> onClickEditSalaryEvent());
         addEmployee.addActionListener(e -> showAddEmployeeView());
@@ -174,6 +176,10 @@ public class EmployeeViewController implements Controller{
 
     private void goToStatisticsView() {
         screen.showAnotherView(this, screen.getStatisticsView());
+    }
+
+    private void goToSaldoView() {
+        screen.showAnotherView(this, screen.getSaldoView());
     }
 
 }

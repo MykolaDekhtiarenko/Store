@@ -15,7 +15,7 @@ import java.util.Map;
 public class MySqlDaoFactory implements DaoFactory<Connection> {
 
     private String user = "root";//Логин пользователя
-    private String password = "admin";//Пароль пользователя
+    private String password = "";//Пароль пользователя
     private String url = "jdbc:mysql://localhost:3306/store";//URL адрес
     private String driver = "com.mysql.jdbc.Driver";//Имя драйвера
     private Map<Class, DaoCreator> creators;

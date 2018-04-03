@@ -8,6 +8,7 @@ public abstract class DaoFactory {
     public abstract EmployeeDao createEmployeeDao();
     public abstract PaidSalaryDao createPaidSalaryDao();
     public abstract PaidBonusDao createPaidBonusDao();
+    public abstract CashFlowDao createCashFlowDao();
 
     public static DaoFactory getInstance() {
         String className = Config.getInstance().getFactoryClassName();
