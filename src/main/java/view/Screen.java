@@ -12,7 +12,7 @@ public class Screen {
     private JFrame frame = new JFrame("Store");
     private DepartmentViewController departmentView = new DepartmentViewController(this);
     private EmployeeViewController employeeView = new EmployeeViewController(this);
-    private StatisticsViewController statisticsView = new StatisticsViewController(this);
+    private StatisticsViewController2 statisticsView = new StatisticsViewController2(this);
     private SaldoViewController saldoView = new SaldoViewController(this);
 
     public void createAndShowGUI() {
